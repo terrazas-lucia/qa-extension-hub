@@ -1,0 +1,468 @@
+/* --- Global Styling --- */
+body {
+  font-family: "Inter", sans-serif;
+  padding: 12px;
+  width: 500px;
+  min-height: 600px;
+  text-align: center;
+  background-color: #f7f3ff;
+  color: #333366;
+}
+
+/* --- Header --- */
+.header-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #4a148c;
+}
+
+/* --- Tab Navigation Styles --- */
+#tab-navigation {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4px;
+  margin-bottom: 12px;
+  padding: 0 10px;
+  border-bottom: 2px solid #e0e0f8;
+}
+
+.tab-button {
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  color: #665c8a;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  color: #9c27b0;
+}
+
+.tab-button.active-tab {
+  background-color: #ffffff;
+  color: #f06292;
+  border: 1px solid #e0e0f8;
+  border-bottom: none;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Container and Wrapper Styles --- */
+#extensionButtonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  min-height: 100px;
+}
+
+.extension-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 8px;
+  border: 1px solid #e0e0f8;
+  border-radius: 8px;
+  background-color: #fcfcff;
+}
+
+.extension-description {
+  font-size: 11px;
+  color: #665c8a;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+/* --- Multi-Button Group Layout --- */
+.button-group-multi {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.button-group-multi .extension-button {
+  flex-grow: 1;
+}
+
+/* --- Button Styling (Default / Inactive State) --- */
+.extension-button {
+  /* Base Button Style */
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Inactive State */
+  background-color: #d1c4e9;
+  color: #333366;
+}
+
+.extension-button:hover {
+  background-color: #b39ddb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* * --- Temporary Active State Styling (.is-active) --- */
+.extension-button.is-active {
+  background-color: #f48fb1;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(244, 143, 177, 0.5);
+}
+
+.extension-button.is-active:hover {
+  background-color: #f06292;
+  transform: translateY(0);
+}
+
+.extension-button.is-toggled-active {
+  background-color: #7e57c2;
+  color: #ffffff;
+  font-weight: 700;
+  border: 1px solid #9c27b0;
+  box-shadow: 0 4px 8px rgba(126, 87, 194, 0.5);
+}
+
+.extension-button.is-toggled-active:hover {
+  background-color: #673ab7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(103, 58, 183, 0.7);
+}
+
+/* --- Error Text --- */
+.text-error {
+  color: #e57373;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.extension-button.loading {
+  background-color: #ffb300;
+  color: #333366;
+  cursor: wait;
+  box-shadow: 0 0 10px rgba(255, 179, 0, 0.7);
+  animation: loading-pulse 1s infinite;
+  transform: none;
+}
+
+.extension-button.success {
+  background-color: #4caf50;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.5);
+  transform: none;
+}
+
+.extension-button.error {
+  background-color: #e53935;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(229, 57, 53, 0.5);
+  transform: none;
+}
+
+.extension-button.cleaned {
+  background-color: #f4511e;
+  color: #ffffff;
+  font-weight: 700;
+  border: 1px solid #d84315;
+  box-shadow: 0 4px 10px rgba(244, 81, 30, 0.7);
+}
+
+.extension-button.cleaned:hover {
+  background-color: #e64a19;
+  transform: translateY(-1px);
+}
+
+/* Animation for the loading state */
+@keyframes loading-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 179, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 179, 0, 0);
+  }
+}
+
+/* --- Persistent Footer and Cat Button (New) --- */
+#launcherFooter {
+  padding: 10px 15px;
+  background-color: transparent;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+#secretCatButton {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #f06292;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- Modal Styles (New) --- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.3s;
+}
+
+.close-button {
+  position: absolute;
+  top: -2px;
+  right: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #f06292;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #74014c;
+}
+
+.cat-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.modal-text {
+  font-size: 0.9rem;
+  color: #f06292;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Confetti Celebration Styles --- */
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  z-index: 1001;
+  border-radius: 2px;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* --- Results Console Window --- */
+#results-console {
+  margin-top: 20px;
+  background: #1e1e1e;
+  color: #dcdcdc;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.console-header {
+  background: #333;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+
+.console-header span {
+  color: var(--toggle-on);
+  font-weight: bold;
+}
+
+.console-header button {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+}
+
+.console-body {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#results-console table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#results-console td,
+#results-console th {
+  padding: 6px 10px;
+  text-align: left;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.tag-badge {
+  background: #4a148c;
+  color: white;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 9px;
+}
+
+code {
+  color: #ce9178;
+}
+
+/* Console Interaction */
+.console-row {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.console-row:hover {
+  background: #333 !important;
+}
+
+.console-row:active {
+  background: #4a148c !important;
+}
+
+.console-body code {
+  white-space: nowrap;
+}
+
+.console-close-button {
+  background: #444;
+  border: none;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: background 0.2s;
+}
+
+.console-close-button:hover {
+  background: #ff5252;
+}
+
+/* --- Text Compare Module --- */
+.hidden-module {
+  display: none; 
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 2px solid #e0e0f8;
+  border-radius: 12px;
+  margin: 10px;
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.1);
+}
+
+.compare-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 5px;
+}
+
+.compare-header h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #4a148c;
+}
+
+.compare-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.compare-inputs textarea {
+  width: 50%;
+  height: 100px;
+  border: 1px solid #d1c4e9;
+  border-radius: 6px;
+  padding: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  background: #fcfcff;
+  resize: none;
+}
+
+.compare-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.diff-output-box {
+  max-height: 150px;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 12px;
+  padding: 10px;
+  background: #f7f3ff;
+  border-radius: 6px;
+  border: 1px dashed #b39ddb;
+  line-height: 1.6;
+}
+
+/* Diff Highlighting */
+.diff-ins { background-color: #e6ffed; color: #22863a; font-weight: bold; border-bottom: 1.5px solid #28a745; padding: 0 2px; }
+.diff-del { background-color: #ffeef0; color: #cb2431; text-decoration: line-through; padding: 0 2px; }
+
+

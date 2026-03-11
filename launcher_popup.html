@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORD QA Extension HUB</title>
+    <link rel="stylesheet" href="launcher_popup.css" />
+  </head>
+  <body>
+    <h1 class="header-title">The FORD QA Extension Launcher</h1>
+    <!-- Tab Navigation: Tabs are dynamically generated here by launcher_popup.js -->
+    <div id="tab-navigation">
+      <!-- Tabs will be rendered here (e.g., All Tools, Content Structure, Data Extraction) -->
+    </div>
+
+    <!-- Extension Buttons: The actual buttons and groups are rendered here -->
+    <div id="extensionButtonContainer">
+      <!-- Buttons and groups will be rendered here by launcher_popup.js -->
+    </div>
+
+    <div id="launcherFooter">
+      <button id="secretCatButton" class="footer-button">
+        Made with love 🐱
+      </button>
+    </div>
+
+    <div id="catModal" class="modal-backdrop">
+      <div class="modal-content">
+        <span id="closeModal" class="close-button">&times;</span>
+        <img
+          id="catImage"
+          src=""
+          alt="Luchito looking at you"
+          class="cat-image"
+        />
+        <p class="modal-text">Keep up the great work!</p>
+      </div>
+    </div>
+
+    <!-- Links to the main logic script -->
+    <script src="launcher_popup.js"></script>
+  </body>
+</html>
